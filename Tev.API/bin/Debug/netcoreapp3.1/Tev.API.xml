@@ -1,0 +1,1298 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tev.API</name>
+    </assembly>
+    <members>
+        <member name="T:Tev.API.Controllers.AlertsController">
+            <summary>
+            APIs for alert management
+            </summary>
+        </member>
+        <member name="M:Tev.API.Controllers.AlertsController.Get(Tev.API.Models.GetAlertsRequest)">
+            <summary>
+            Gets all the alerts across all location and devices and all acknowledgement status
+            </summary>
+            <param name = "reqBody" ></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.AlertsController.Acknowledge(System.String,System.Boolean)">
+            <summary>
+            Acknowledge or un-acknowledge an alert
+            </summary>
+            <param name="alertId"></param>
+            <param name="acknowledge"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.AlertsController.BookMark(System.String,System.Boolean)">
+            <summary>
+            Bookmark or un-Bookmark an alert
+            </summary>
+            <param name="alertId"></param>
+            <param name="bookmark"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.AlertsController.ReportIncorrect(Tev.API.Models.IncorrectAlertRequest)">
+            <summary>
+            Report an alert as incorrect classification
+            </summary>
+            <param name="reqBody"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.AlertsController.GetAlertTypes(System.String)">
+            <summary>
+            Get the type of alerts
+            </summary>
+            <param name="devices">comma separated value of devices or a single device type examples separated by pipe TEV| TEV2 | TEV,TEV2,WSD | WSD </param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.AlertsController.Delete(System.String)">
+            <summary>
+            Deletes the alert for an id
+            </summary>
+            <param name="alertId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.AlertsController.ProccessSelectedAlerts(Tev.API.Models.ProccessSelectedAlertsRequest)">
+            <summary>
+            Performs the requested action for the alert ids . for deletion Action == "Delete" 
+            </summary>
+            <param name="reqBody"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tev.API.Controllers.DevicesController">
+            <summary>
+            APIs for device management
+            </summary>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.AddDevice(Tev.API.Models.AddDeviceRequest)">
+            <summary>
+            Adds a device to the org heirarchy
+            </summary>
+            <param name="reqBody"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.GetAllDevices(System.Nullable{MMSConstants.DevicePermissionEnum})">
+            <summary>
+            Gets all devices across all locations...
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.GetTev2AllDevices(System.Nullable{MMSConstants.DevicePermissionEnum})">
+            <summary>
+            Gets TEV2 devices across all locations
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.GetAllDevicesForLocation(System.String)">
+            <summary>
+            Gets devices specific to a location
+            </summary>
+            <param name="id">The location id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.DeleteDevice(System.String)">
+            <summary>
+            Delete a device by passing device id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.GetAllDeviceTypes">
+            <summary>
+            Gets all Device Types
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.GetUnacknowledgedAlertsCount(Tev.API.Models.SiteIdsRequest)">
+            <summary>
+            Gets the count of unack alerts
+            </summary>
+            <param name="deviceIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.UpdateDeviceConfiguration(System.String,Tev.API.Models.UpdateDeviceConfigRequest)">
+            <summary>
+            Updates device configuration for loiter, crowd, trespassing and buzzer
+            </summary>
+            <param name="deviceId"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.GetDeviceConfiguration(System.String)">
+            <summary>
+            Gets devices configuration and SignalR URL for latest snap from the device
+            </summary>
+            <param name="deviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.UpdateDeviceNameOrLocation(System.String,Tev.API.Models.UpdateDeviceRequest)">
+            <summary>
+            Updates a device name or location
+            </summary>
+            <param name="deviceId"></param>
+            <param name="reqBody"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.GetAuthPin(System.String,System.String)">
+            <summary>
+            Get the auth pin for QR codes
+            </summary>
+            <param name="purpose">One of the three setup/edit/factoryreset</param>
+            <param name="deviceId">The device id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.ValidateAuthPin(System.String,System.String,System.Int32)">
+            <summary>
+            Validates the QR code auth pin
+            </summary>
+            <param name="purpose">one of the two setup/edit</param>
+            <param name="deviceId">logical Device id</param>
+            <param name="authCode">auth code</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.GetDeviceType(System.String)">
+            <summary>
+            Gets device type from the device
+            </summary>
+            <param name="deviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.GetDeviceByDeviceId(System.String)">
+            <summary>
+            Gets device details by logical device Id
+            </summary>
+            <param name="deviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.GetSDCardPaswordByDeviceId(System.String)">
+            <summary>
+            Gets device SD card Passphrase by logical device Id
+            </summary>
+            <param name="deviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.StartDeviceConfigMode(System.String)">
+            <summary>
+            This method put the device in config mode using direct method call.
+            </summary>
+            <param name="deviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.DeleteDuplicateDevice(Tev.Cosmos.Entity.Device)">
+            <summary>
+            Delete a duplicated device by passing device details.called by Azure Function App DeleteDuplicateDevice
+            </summary>
+            <param name="duplicatedDevice"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.GetWifiSignalStrength(System.String)">
+            <summary>
+            Gets Wifi signal strength value from device between 0 to 100 using direct method call.
+            </summary>
+            <param name="deviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.MapDTO(Tev.Cosmos.Entity.Device,System.String,System.String)">
+            <summary>
+            Maps TevDevice class to DeviceResponse class
+            </summary>
+            <param name="x"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.MapTevDTO(Tev.Cosmos.Entity.Device,System.String)">
+            <summary>
+            Maps TevDevice class to Tev2 DeviceResponse class
+            </summary>
+            <param name="x"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tev.API.Controllers.LocationController">
+            <summary>
+            APIs for location management
+            </summary>
+        </member>
+        <member name="M:Tev.API.Controllers.LocationController.GetLocations">
+            <summary>
+            Get all the locations of a logged in user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.LocationController.AddLocation(Tev.API.Models.AddLocationRequest)">
+            <summary>
+            Adds a location to the logged in user's org
+            </summary>
+            <param name="reqBody"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.LocationController.UpdateLocation(Tev.API.Models.UpdateLocationRequest)">
+            <summary>
+            Updates the location name of provided locationId
+            </summary>
+            <param name="reqBody"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.LocationController.DeleteLocation(System.String)">
+            <summary>
+            Deletes the provided location
+            </summary>
+            <param name="locationId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.NotificationController.SubscribeToTopic(Tev.API.Models.FirebaseTopicRequest)">
+            <summary>
+            Subscribe to firebase push notification
+            </summary>
+            <param name="reqBody"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.NotificationController.UnSubscribeToTopic(Tev.API.Models.FirebaseTopicRequest)">
+            <summary>
+            UnSubscribe to firebase push notification
+            </summary>
+            <param name="reqBody"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.NotificationController.DeviceSetupInit(System.String)">
+            <summary>
+            Starts the device setup process
+            </summary>
+            <param name="logicalDeviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.NotificationController.DeviceSetupStatus(System.String,System.String)">
+            <summary>
+            Get the device setup status
+            </summary>
+            <param name="logicalDeviceId"></param>
+            <param name="deviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.PlayBackController.GetDates(System.String,System.String,System.String)">
+            <summary>
+            Get the Dates of available videos
+            </summary>
+            <param name="device_Id"></param>
+            <param name="month"></param>
+            <param name="year"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.PlayBackController.GetAllDates(System.String)">
+            <summary>
+            Get all revording available dates according to logical device id
+            </summary>
+            <param name="device_Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.PlayBackController.GetTimeArray(System.String,System.String,System.Double)">
+            <summary>
+            Available Video's time in array for the selected day
+            </summary>
+            <param name="device_id"></param>
+            <param name="date"></param>
+            <param name="offSet"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:Tev.API.Controllers.PlayBackController.VideoDownload(Tev.API.Models.DeviceList,System.String,System.String)">
+            <summary>
+            To Send the command to device for available video list for the selected time period
+            </summary>
+            <param name="deviceIds"></param>
+            <param name="startDateTime"></param>
+            <param name="endDateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.PlayBackController.UploadVideo(Tev.API.Models.DownloadVedioList)">
+            <summary>
+            To Upload the Video on blob storage
+            </summary>
+            <param name="downloadVedioList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.PlayBackController.GetVideoDownloadUrls(Tev.API.Models.DownloadVedioList)">
+            <summary>
+            To create the  Downloadable url for selected video file
+            </summary>
+            <param name="deviceIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.PlayBackController.GetvideoList(Tev.API.Models.DeviceList)">
+            <summary>
+            To get the available video list
+            </summary>
+            <param name="deviceList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.PlayBackController.GetAllDeviceVideoList">
+            <summary>
+            To Get the available video for the devices
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.PlayBackController.GetAllDeviceVideoDownloadUrls">
+            <summary>
+            Get the Download Video Url for all the available videos for all devices
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.PlayBackController.DeleteVideo(System.String,System.String)">
+            <summary>
+            Delete the video details from Database
+            </summary>
+            <param name="device_id"></param>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.RecordingController.ScheduleRecording(Tev.API.Models.RecordingRequest)">
+            <summary>
+            Schedule Recording 
+            </summary>
+            <param name="recordingReq"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.RecordingController.Rec_Settings(Tev.API.Models.RecordingRequest)">
+            <summary>
+            To Start/Stop the manual, offline and event recordings
+            </summary>
+            <param name="recordingReq"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.RecordingController.GetRecordVedioResolution(System.String)">
+            <summary>
+             To Get the Record Video Resolutions
+            </summary>
+            <param name="device_id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.RecordingController.GetLiveStreamVedioResolution(System.String)">
+            <summary>
+            To Get the Livestream video resolutions
+            </summary>
+            <param name="device_id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.RecordingController.SetRecordVedioResolution(Tev.API.Models.RecordVedioResolutionRequest)">
+            <summary>
+            Set Record Vedio Resolution
+            </summary>
+            <param name="vedioResolutionReq"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.RecordingController.SetLiveStreamVedioResolution(Tev.API.Models.RecordVedioResolutionRequest)">
+            <summary>
+            Set Livestream video resolutions
+            </summary>
+            <param name="vedioResolutionReq"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.RecordingController.GetRecordSettings(System.String)">
+            <summary>
+            To Get the record settings
+            </summary>
+            <param name="device_id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.RecordingController.CopyCameraSettings(Tev.API.Models.Device_IdsList)">
+            <summary>
+            To Copy the camera settings from one camera to multiple/one camera
+            </summary>
+            <param name="device_IdsList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.RecordingController.GetAllCameraLocation(System.String)">
+            <summary>
+            Get all cameras by locations
+            </summary>
+            <param name="OrgId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.RecordingController.OverrideOnFIFO(System.String,System.Boolean)">
+            <summary>
+            Override on fifo
+            </summary>
+            <param name="device_id"></param>
+            <param name="fifo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.RecordingController.ClearRecordSettings(System.String)">
+            <summary>
+            Clear the Recordsettings
+            </summary>
+            <param name="device_id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.RecordingController.sdCardRecHistory(Tev.API.Models.SDCardRecHistoryRequest)">
+            <summary>
+            Device is hitting this api to upload the sdcard record history to database
+            </summary>
+            <param name="sdCardRecHistoryRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.RecordingController.videoDurationList(Tev.API.Models.DeviceList)">
+            <summary>
+            Send commands device To upload the sd card history to database
+            </summary>
+            <param name="deviceIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.SDCardController.FormatSD_Card(System.String,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Format the SD card
+            </summary>
+            <param name="device_id"></param>
+            <param name="formatType"></param>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.SDCardController.SD_Card_Detail(System.String)">
+            <summary>
+            SD Card Details
+            </summary>
+            <param name="device_id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.SDCardController.ClearRecordSettings(System.String)">
+            <summary>
+            Clear Record Settings
+            </summary>
+            <param name="device_id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.SRTSessionController.getSessionId">
+            <summary>
+            SRT Authentication
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.SRTSessionController.GetDevicePrimaryUserDetails(System.String,System.String)">
+            <summary>
+            Return device primary user details
+            </summary>
+            <param name="uid"></param>
+            <param name="deviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.SRTSessionController.GetRoutes(System.String,Tev.API.Models.DeviceList,System.String)">
+            <summary>
+            Get the free Routes from SRT Server and assign to device and mobile app
+            </summary>
+            <param name="deviceIds"></param>
+            <param name="view"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.SRTSessionController.dynamicRouteCreation(System.String,System.String,System.String,Tev.API.Models.SRTRouterList)">
+            <summary>
+            dynamic route create
+            </summary>
+            <param name="sessionId"></param>
+            <param name="srtDeviceId"></param>
+            <param name="deviceId"></param>
+            <param name="srtRouterList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.SRTSessionController.CreateRoutes">
+            <summary>
+            Copy the routes from SRT Server to MSSQL DB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.SRTSessionController.checkSrtConnection(System.String,System.String)">
+            <summary>
+            Check the SRT Connection
+            </summary>
+            <param name="deviceId"></param>
+            <param name="secretKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.SRTSessionController.StopStreaming(Tev.API.Models.DeviceList)">
+            <summary>
+            Stop the Streaming
+            </summary>
+            <param name="deviceIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.SRTSessionController.SetEncryption(System.String,System.Boolean)">
+            <summary>
+            Encryption of data
+            </summary>
+            <param name="device_id"></param>
+            <param name="encryption"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.SRTSessionController.AddUpdateDeviceStreamTypeStatus(Tev.API.Models.DeviceList,System.String,System.String)">
+            <summary>
+            Method add or update multiuser accessing same device streaming type 
+            </summary>
+            <param name="deviceIds"></param>
+            <param name="sourceMethod"></param>
+            <param name="requestType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.SRTSessionController.AddDeviceStreamTypeDB(Tev.DAL.Entities.DeviceStreamingTypeManagement)">
+            <summary>
+            Add requested user device stream type in the database
+            </summary>
+            <param name="deviceStreamingTypeManagement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.SRTSessionController.UpdateDeviceStreamTypeDB(Tev.DAL.Entities.DeviceStreamingTypeManagement)">
+            <summary>
+            Update requested user device stream type in the database
+            </summary>
+            <param name="deviceStreamingTypeManagement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.SRTSessionController.UpdateUserStreamingState(System.String,Tev.API.Models.UpdateUserStreamingStateRequestModel)">
+            <summary>
+            If any user exits out of live streaming or plaback screen or closes the App UpdateUserStreamingState API called by Mobile APP
+            API will reset the streaming status of the user for that device.
+            </summary>
+            <param name="UserStreamingState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.TechnicianController.CreateTechnician(Tev.API.Models.TechnicianModel)">
+            <summary>
+            create Technician post method
+            </summary>
+            <param name="model">model contains name,email,phone,latitude,longitude values, in this model technicianId not required.</param>
+            <returns>it returns technician Id.</returns>
+        </member>
+        <member name="M:Tev.API.Controllers.TechnicianController.UpdateTechnician(Tev.API.Models.TechnicianModel)">
+            <summary>
+            Update Technician data
+            </summary>
+            <param name="model">model contains technicianId,name,email,phone,latitude,longitude values.</param>
+            <returns>it returns success message.</returns>
+        </member>
+        <member name="M:Tev.API.Controllers.TechnicianController.GetTechnicianById(System.String)">
+            <summary>
+            Get technician by technician Id
+            </summary>
+            <param name="technicianId">string technicianId</param>
+            <returns>it returns single technician details.</returns>
+        </member>
+        <member name="M:Tev.API.Controllers.TechnicianController.GetAllTechnician">
+            <summary>
+            Get all technician from database.
+            </summary>
+            <returns>it returns all technicians from db</returns>
+        </member>
+        <member name="M:Tev.API.Controllers.TechnicianController.DeleteTechnician(System.String)">
+            <summary>
+            delete technician by Id
+            </summary>
+            <param name="technicianId">string technicianId</param>
+            <returns>it returns success Message</returns>
+        </member>
+        <member name="M:Tev.API.Controllers.TechnicianController.GetAllTechnicianPaginated(Tev.API.Models.GetAllTechnicianPaginateReq)">
+            <summary>
+            Get all technician paginated
+            </summary>
+            <param name="req">request contains pageNo,perPageRecordCount,sortBy,sortOrder,search</param>
+            <returns>it returns all technician paginated response</returns>
+        </member>
+        <member name="M:Tev.API.Controllers.TevControllerBase.IsOrgAdmin(MMSConstants.Applications)">
+            <summary>
+            get true if user is organization admin
+            </summary>
+            <param name="app"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.UserDevicePermissionController.CreateUserDevicePermission(Tev.API.Models.UserDevicePermissionModel)">
+            <summary>
+            Create User Device Permission
+            </summary>
+            <param name="model">model contains deviceId,Username and permissions</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.UserDevicePermissionController.UpdateUserDevicePermission(Tev.API.Models.UserDevicePermissionModel)">
+            <summary>
+            Update User Device Permissions
+            </summary>
+            <param name="model">model contains deviceId,Username and permissions</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.UserDevicePermissionController.GetUserDevicePermissionByUserEmail(System.String)">
+            <summary>
+            it returns all Device permission by user email
+            </summary>
+            <param name="userEmail"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.UserDevicePermissionController.GetDevicePermissionByUserEmails(Tev.API.Models.GetUserDevicePermissionReq)">
+            <summary>
+            it returns all Device permission by user email
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.UserDevicePermissionController.DeleteUserPermissionById(System.String)">
+            <summary>
+            Delete User permission By id
+            </summary>
+            <param name="userDevicePermissionId">user device permission Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.UserDevicePermissionController.GetDevicePermissions">
+            <summary>
+            Get Device Permissions
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.UserManualController.GetUserManual(System.String,System.String)">
+            <summary>
+            Gets User Manual PDF of the Device Type Passed to the API.
+            </summary>
+            <param name="deviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.VideoController.Start(System.String)">
+            <summary>
+            API to start video streaming, actual HLS URL will be provided by signal R
+            </summary>
+            <param name="deviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.VideoController.Stop(System.String,System.Int64)">
+            <summary>
+            API to stop video streaming
+            </summary>
+            <param name="deviceId"></param>
+            <param name="seqNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.VideoController.GetHLS(System.String)">
+            <summary>
+            API to get HLS url
+            </summary>
+            <param name="deviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.VideoController.StartVideoForIos(System.String)">
+            <summary>
+            API to start video streaming, actual HLS URL will be provided by signal R
+            </summary>
+            <param name="deviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.VideoController.GetHLSUrlForIos(System.String,System.Int32)">
+            <summary>
+            API to get HLS url
+            </summary>
+            <param name="deviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.VideoController.StopSDCardStreaming(System.String)">
+            <summary>
+            API to stop SD Card video streaming
+            </summary>
+            <param name="deviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.VideoController.UpdateDeviceVideoConfiguration(System.String,Tev.API.Models.UpdateDeviceVideoConfigurationRequest)">
+            <summary>
+            Updates device Video configuration for HLS Live Streaming / SD Card Stream / Web RTC LiveStreaming
+            </summary>
+            <param name="deviceId"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tev.API.Controllers.WSDFactoryUtilityController">
+            <summary>
+            APIs for device management
+            </summary>
+        </member>
+        <member name="M:Tev.API.Controllers.WSDFactoryUtilityController.AddDeviceFactoryData(Tev.API.Models.AddDeviceFactoryDataRequest)">
+            <summary>
+            Adds a device factory data to the database for reporting
+            </summary>
+            <param name="reqBody"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.WSDFactoryUtilityController.GetDeviceFactoryData(System.String,System.String,System.String,System.String)">
+            <summary>
+            Gets passed device factory data on basis of device fromSrNo and toSrNo
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.WSDFactoryUtilityController.GetDevicePassFailCount">
+            <summary>
+            Gets passed device factory data on basis of device count, device creation from and to date
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.ZohoSubscriptionController.GetPlans(System.String,System.String)">
+            <summary>
+            Get all active plan for a product and device 
+              1. Purchase New - get all plans for that product 
+              2. Modify - get the current plan.
+              3. Renew - Get all the plans for that product.
+            </summary>
+            <param name="product">TEV or WSD</param>
+            <param name="deviceId">Logical device id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.ZohoSubscriptionController.CreateNewSubscription(Tev.API.Models.CreateNewSubscriptionRequest)">
+            <summary>
+            Create new subscription online - returns a zoho payment hosted page url
+            </summary>
+            <param name="zohoSubscriptionRequest"></param>
+            <returns>zoho payment hosted page url</returns>
+        </member>
+        <member name="M:Tev.API.Controllers.ZohoSubscriptionController.GetSubscriptionByHostedPageId(System.String,System.String)">
+            <summary>
+            Push Subscription Details to Device
+            </summary>
+            <param name="hostedpageId"></param>
+            <param name="deviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.ZohoSubscriptionController.RetrieveAllSubscription">
+            <summary>
+            Retrieve all active subscription 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.ZohoSubscriptionController.UpdateSubscriptionOnline(Tev.API.Models.ZohoSubscriptionRequest)">
+            <summary>
+            UpdateSubscriptionOnline - returns a zoho payment hosted page url for upgrading the subscription.
+            </summary>
+            <param name="zohoSubscriptionRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.ZohoSubscriptionController.UpdateSubscriptionOffline(Tev.API.Models.ZohoSubscriptionRequest)">
+            <summary>
+            UpdateSubscriptionOffline - update the subscription offline with out collecting payment online 
+            </summary>
+            <param name="zohoSubscriptionRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.ZohoSubscriptionController.SubscriptionDetail(System.String)">
+            <summary>
+            Retrieve subscription details
+            </summary>
+            <param name="subscriptionId">Subscription id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.ZohoSubscriptionController.SubscriptionHistory">
+            <summary>
+            Order history - retrieve subscription event's related to all subscription which the end user has.
+            </summary>
+            <returns>List of ZohoSubscriptionHistory</returns>
+        </member>
+        <member name="M:Tev.API.Controllers.ZohoSubscriptionController.DownloadInvoice(System.String)">
+            <summary>
+            Download invoice
+            </summary>
+            <param name="invoiceId"> Invoice id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.ZohoSubscriptionController.CancelSubscription(Tev.API.Models.CancelOrReactivateSubscriptionRequest)">
+            <summary>
+            Cancel subscription -  schedule to cancel the subscription at the end of the term. 
+            </summary>
+            <param name="cancelSubscriptionRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.ZohoSubscriptionController.ReactivateSubscription(Tev.API.Models.CancelOrReactivateSubscriptionRequest)">
+            <summary>
+            Re-activate subscription - remove cancel subscription scheduler 
+            </summary>
+            <param name="reactivateSubscriptionRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.ZohoSubscriptionController.ComputeCost(Tev.API.Models.ComputeCostRequest)">
+            <summary>
+            Calculate cost - returns the amount end user needs to pay.
+            </summary>
+            <param name="zohoSubscriptionRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.ZohoSubscriptionController.GetUnusedCredits">
+            <summary>
+            Get unused credit's of a user from zoho account.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.ZohoSubscriptionController.CreateNewSubscriptionOffline(Tev.API.Models.CreateNewSubscriptionRequestExtension)">
+            <summary>
+            Create new subscription offline ie; with out collecting the payment. 
+            </summary>
+            <param name="zohoSubscriptionRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.ZohoSubscriptionController.ActivatePromoSubscriptionForWsd(Tev.API.Models.CreateNewSubscriptionRequestExtension)">
+            <summary>
+            Activate Promotional subscription offline ie; with out collecting the payment. 
+            </summary>
+            <param name="promoSubscriptionRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.ZohoSubscriptionController.GetOrphanSubscription">
+            <summary>
+            Get all orphan subscription
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.ZohoSubscriptionController.AttachSubscription(System.String,System.String)">
+            <summary>
+            Attach orphan subscription to a device  
+            </summary>
+            <param name="orphanSubscriptionId"> Orphan subscription id</param>
+            <param name="deviceId">Logical device id</param>
+            <returns>MMSHttpReponse</returns>
+        </member>
+        <member name="P:Tev.API.Models.AddDeviceRequest.DeviceId">
+            <summary>
+            Logical device id
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.AddDeviceRequest.IsNewSite">
+            <summary>
+            If the site is new for exisiting
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.AddDeviceRequest.SiteName">
+            <summary>
+            Not required when IsNewSite is false
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.AddDeviceRequest.SiteId">
+            <summary>
+            Site id to which device will be attached
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.AddDeviceRequest.Application">
+            <summary>
+            Application name
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.AddLocationRequest.LocationName">
+            <summary>
+            Location name , maxlength 300 charcters
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.CancelOrReactivateSubscriptionRequest.SubscriptionId">
+            <summary>
+            Subscription id
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.CancelOrReactivateSubscriptionRequest.DeviceId">
+            <summary>
+            Logical device id
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.CancelOrReactivateSubscriptionRequest.DeviceName">
+            <summary>
+            Device name
+            </summary>
+        </member>
+        <member name="T:Tev.API.Models.DeviceConfigurationResponse">
+            <summary>
+            Response class for device config data
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceConfigurationResponse.Crowd">
+            <summary>
+            Config related to Crowd feature
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceConfigurationResponse.Loiter">
+            <summary>
+            Config related to Loiter feature
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceConfigurationResponse.Trespassing">
+            <summary>
+            Config related to trespassing feature, all times are in 24 hours format in IST e.g. "20:30"
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceConfigurationResponse.BuzzerControl">
+            <summary>
+            Buzzer On Off Config
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceConfigurationResponse.PersonDetectionSensitivity">
+            <summary>
+            Sensitivity for Person Detection.
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.LoiterDTO.Time">
+            <summary>
+            Loiter time in minutes
+            </summary>
+        </member>
+        <member name="T:Tev.API.Models.DeviceReplacementModel">
+            <summary>
+            Device Replacement Model
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceResponse.Id">
+            <summary>
+            Device Id
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceResponse.Name">
+            <summary>
+            Device Name
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceResponse.Connected">
+            <summary>
+            True denotes online, false denotes offline, null denotes Indeterminate
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceResponse.LocationId">
+            <summary>
+            Location to which device is connected
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceResponse.LocationName">
+            <summary>
+            Location to which device is connected
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceResponse.MacAddress">
+            <summary>
+            Physical address of the device
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceResponse.FirmwareVersion">
+            <summary>
+            Current Firmware version of the device
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceResponse.WifiName">
+            <summary>
+            Wifi to which device is connected
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceResponse.SubscriptionId">
+            <summary>
+            Zoho subsription id of the device
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceResponse.AvailableFeatures">
+            <summary>
+            List of available features on the device
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceResponse.SubscriptionExpiryDate">
+            <summary>
+            Date when current subscription expires
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceResponse.CurrentUserPermission">
+            <summary>
+            Device Permission For User
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceSubscriptionResponse.LastPaidDate">
+            <summary>
+            Last payment made for this subscription in Epoch Time format
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceSubscriptionResponse.NextRenewalData">
+            <summary>
+            Next renewal date for this subscription in Epoch Time
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceTypeResponse.Name">
+            <summary>
+            Device Type Name.
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceTypeResponse.Description">
+            <summary>
+            Device Type Description.
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceTypeResponse.LongName">
+            <summary>
+            Long name of the device
+            </summary>
+        </member>
+        <member name="T:Tev.API.Models.EmergencyCallHistoryModel">
+            <summary>
+            Emergency Call History Model
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.GetAlertsRequest.Take">
+            <summary>
+            Number of alerts to fetch
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.GetAlertsRequest.Skip">
+            <summary>
+            Number of alerts to skip
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.GetAlertsRequest.Acknowledged">
+            <summary>
+            Filters by akcnowledge status of the alerts,  do not include in request body if acknowledge status filtering is not required
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.GetAlertsRequest.IsBookMarked">
+            <summary>
+            Filters by bookmarked status of the alerts,  do not include in request body if bookmark status filtering is not required
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.GetAlertsRequest.AlertType">
+            <summary>
+            Alert types e.g, crowd, crouch etc, do not include in request body if type filtering is not required
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.GetAlertsRequest.LocationId">
+            <summary>
+            Location id for which alert is required, do not include in request body if location filtering is not required
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.GetAlertsRequest.DeviceId">
+            <summary>
+            Device id for which alert is required, do not include in request body if device filtering is not required
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.GetAlertsRequest.IsCorrect">
+            <summary>
+            Filters by IsCorrect status of the alerts,  do not include in request body if IsCorrect status filtering is not required
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.GetAlertsRequest.StartDate">
+            <summary>
+            Start date in epoch time seconds, it should be epoch time corresponding to 00:00:00 hrs of the selected date
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.GetAlertsRequest.EndDate">
+            <summary>
+            End date in epoch time seconds, it should be epoch time corresposing to 23:59:59 hrs of the selected date
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.GetAlertsRequest.Device">
+            <summary>
+            The application for which alerts is required, defaults to TEV
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.GetZoneFencingResponse.Enabled">
+            <summary>
+            Yes if zone fencing is required, no if not required
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.GetZoneFencingResponse.Zone">
+            <summary>
+            (x1,y1) and (x2,y2) corordinates
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.LocationResponse.Id">
+            <summary>
+            The unique Id of location
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.LocationResponse.Name">
+            <summary>
+            Name of the location
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.PaymentHistoryResponse.PaymentDate">
+            <summary>
+            Payment Date in epoch time
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.PaymentHistoryResponse.Amount">
+            <summary>
+            Paid amount
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.SetResetZoneFencingRequest.Enabled">
+            <summary>
+            Yes if zone fencing is required, no if not required
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.SetResetZoneFencingRequest.Zone">
+            <summary>
+            (x1,y1) and (x2,y2) corordinates
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.SetResetZoneFencingRequest.ClientImageWidth">
+            <summary>
+            The width of the image on client
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.SetResetZoneFencingRequest.ClientImageHeight">
+            <summary>
+            Height of image on client
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.BasePaginatedReq.Search">
+            <summary>
+            Search term pagination response of technicians
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.BasePaginatedReq.PageNo">
+            <summary>
+            Page number
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.BasePaginatedReq.PageSize">
+            <summary>
+            PageSize
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.Tev2DeviceResponse.Id">
+            <summary>
+            Device Id
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.Tev2DeviceResponse.Name">
+            <summary>
+            Device Name
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.Tev2DeviceResponse.Connected">
+            <summary>
+            True denotes online, false denotes offline, null denotes Indeterminate
+             /// </summary>
+        </member>
+        <member name="P:Tev.API.Models.Tev2DeviceResponse.LocationId">
+            <summary>
+            Location to which device is connected
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.Tev2DeviceResponse.LocationName">
+            <summary>
+            Location to which device is connected
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.TextValueResponse`1.Text">
+            <summary>
+            Display text, to be used for UI display
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.TextValueResponse`1.Value">
+            <summary>
+            Value, to be used for API communications
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.UpdateDeviceConfigRequest.TrespassingStartTime">
+            <summary>
+            Tresspassing Start Time in IST in AM PM format e.g "8:30 PM"
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.UpdateDeviceConfigRequest.TrespassingEndTime">
+            <summary>
+            Tresspassing End Time in IST in AM PM format e.g "6:30 AM"
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.UpdateDeviceConfigRequest.LoiterTime">
+            <summary>
+            Timespan in minutes after which loiter alert will be triggered
+            If a person stays in frame for n minutes then after n minutes only loiter alert will be triggered. Before n minutes there wont be loiter alert
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.UpdateDeviceConfigRequest.CrowdPersonLimit">
+            <summary>
+            Crowd Person Limit
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.UpdateDeviceConfigRequest.BuzzerControl">
+            <summary>
+            Buzzer On Off Config
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.UpdateDeviceConfigRequest.PersonDetectionSensitivity">
+            <summary>
+            Sensitivity for Person Detection.
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.UpdateDeviceRequest.DeviceName">
+            <summary>
+            If left blank, device name wont be considered for update
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.UpdateDeviceRequest.LocationId">
+            <summary>
+            If left blank location wont be considered for update
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.VideoStreamingStartResponse.SignalRNegotiateUrl">
+            <summary>
+            URL for subscription to signalR notifications
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.VideoStreamingStartResponse.StopSequenceNumber">
+            <summary>
+            Stop sequence number to be sent to STOP video API when the user clicks the stop video button
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.VideoStreamingStartResponse.HLSUrl">
+            <summary>
+            The HLS URL for live streaming
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.ZohoSubscriptionRequest.SubscriptionId">
+            <summary>
+            Subscription id
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.ZohoSubscriptionRequest.PlanCode">
+            <summary>
+            Plan code
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.ZohoSubscriptionRequest.DeviceId">
+            <summary>
+            Logical device id
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.ZohoSubscriptionRequest.Addons">
+            <summary>
+            AddOn / Feature(s) id's in comma seperated 
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.ZohoSubscriptionRequest.Headless">
+            <summary>
+            headless true / false value tells whether the request is from web or mobile , 
+            If headless value is true that means request coming from mobile 
+            else the request came from web app.
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.CreateNewSubscriptionRequest.PlanCode">
+            <summary>
+            Plan code 
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.CreateNewSubscriptionRequest.DeviceId">
+            <summary>
+            Logical device id
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.CreateNewSubscriptionRequest.Addons">
+            <summary>
+            AddOn / Feature(s) id's in comma seperated 
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.CreateNewSubscriptionRequest.Headless">
+            <summary>
+            Headless true / false value tells whether the request is from web or mobile , 
+            If headless value is true that means request coming from mobile 
+            else the request came from web app.
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.ComputeCostRequest.SubscriptionId">
+            <summary>
+            Subscription Id
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.ComputeCostRequest.PlanCode">
+            <summary>
+            Plan code 
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.ComputeCostRequest.Addons">
+            <summary>
+            AddOn / Feature(s) id's in comma seperated 
+            </summary>
+        </member>
+    </members>
+</doc>

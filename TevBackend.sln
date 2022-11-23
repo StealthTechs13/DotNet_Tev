@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tev.API", "Tev.API\Tev.API.csproj", "{863EDED5-63E1-472B-9202-68D46AA69091}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tev.IotHub", "Tev.IotHub\Tev.IotHub.csproj", "{F8491F28-4714-4494-A5F9-426084BF1189}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tev.Cosmos", "Tev.Cosmos\Tev.Cosmos.csproj", "{535783EC-3501-4A07-90D9-EAF817447951}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZohoSubscription", "..\mms_common\ZohoSubscription\ZohoSubscription.csproj", "{BA34C823-1929-4F6A-B821-2BBB4035FF87}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMSConstants", "..\mms_common\MMSConstants\MMSConstants.csproj", "{F54FE09C-25FA-4FDA-9A44-DAA81B0B5A2F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tev.DAL", "Tev.DAL\Tev.DAL.csproj", "{FAD1743B-050B-475E-935E-C33E152D83EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{863EDED5-63E1-472B-9202-68D46AA69091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{863EDED5-63E1-472B-9202-68D46AA69091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{863EDED5-63E1-472B-9202-68D46AA69091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{863EDED5-63E1-472B-9202-68D46AA69091}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8491F28-4714-4494-A5F9-426084BF1189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8491F28-4714-4494-A5F9-426084BF1189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8491F28-4714-4494-A5F9-426084BF1189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8491F28-4714-4494-A5F9-426084BF1189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{535783EC-3501-4A07-90D9-EAF817447951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{535783EC-3501-4A07-90D9-EAF817447951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{535783EC-3501-4A07-90D9-EAF817447951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{535783EC-3501-4A07-90D9-EAF817447951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA34C823-1929-4F6A-B821-2BBB4035FF87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA34C823-1929-4F6A-B821-2BBB4035FF87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA34C823-1929-4F6A-B821-2BBB4035FF87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA34C823-1929-4F6A-B821-2BBB4035FF87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F54FE09C-25FA-4FDA-9A44-DAA81B0B5A2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F54FE09C-25FA-4FDA-9A44-DAA81B0B5A2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F54FE09C-25FA-4FDA-9A44-DAA81B0B5A2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F54FE09C-25FA-4FDA-9A44-DAA81B0B5A2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAD1743B-050B-475E-935E-C33E152D83EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAD1743B-050B-475E-935E-C33E152D83EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAD1743B-050B-475E-935E-C33E152D83EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAD1743B-050B-475E-935E-C33E152D83EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27D00573-3CB7-4B93-A2BE-A9950384D15E}
+	EndGlobalSection
+EndGlobal

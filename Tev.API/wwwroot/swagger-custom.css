@@ -1,0 +1,59 @@
+﻿.swagger-ui .topbar {
+    background-color: #303030;
+}
+.swagger-ui .info .title {
+    color: #303030;
+    font-size: 16px;
+}
+
+.link img {
+    content: url("logo.png");
+    width: 350px;
+    height:auto;
+    margin-left:-20px;
+}
+
+.swagger-ui img {
+    max-width: none;
+}
+.select-label span{
+    display:none;
+}
+.swagger-ui .topbar .download-url-wrapper .select-label select {
+    flex: none;
+    border: none;
+    width:100px;
+    position:absolute;
+    right:10px;
+}
+.swagger-ui .info {
+    margin: 10px 0;
+}
+.swagger-ui .scheme-container {
+     margin: 0;
+     padding: 0; 
+     background: none; 
+     box-shadow: none; 
+}
+.swagger-ui .opblock .opblock-summary-description{
+    padding:2px 20px;
+}
+.swagger-ui table.model tbody tr td{
+    vertical-align:middle !important;
+}
+.swagger-ui .model-title{
+    font-size:12px;
+}
+table.model tr {
+    border-bottom: 1px dashed grey;
+}
+.model-title__text{
+    display:none;
+}
+.model tr .renderedMarkdown p{
+    margin:0;
+    font-size:13px;
+}
+.swagger-ui .execute-wrapper .btn {
+    width: 170px;
+}

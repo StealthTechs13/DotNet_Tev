@@ -1,0 +1,16 @@
+D:\honeywell\TEV_API\Tev.DAL\bin\Debug\netcoreapp3.1\Tev.DAL.deps.json
+D:\honeywell\TEV_API\Tev.DAL\bin\Debug\netcoreapp3.1\Tev.DAL.runtimeconfig.json
+D:\honeywell\TEV_API\Tev.DAL\bin\Debug\netcoreapp3.1\Tev.DAL.runtimeconfig.dev.json
+D:\honeywell\TEV_API\Tev.DAL\bin\Debug\netcoreapp3.1\Tev.DAL.dll
+D:\honeywell\TEV_API\Tev.DAL\bin\Debug\netcoreapp3.1\Tev.DAL.pdb
+D:\honeywell\TEV_API\Tev.DAL\bin\Debug\netcoreapp3.1\MMSConstants.dll
+D:\honeywell\TEV_API\Tev.DAL\bin\Debug\netcoreapp3.1\MMSConstants.pdb
+D:\honeywell\TEV_API\Tev.DAL\obj\Debug\netcoreapp3.1\Tev.DAL.csproj.AssemblyReference.cache
+D:\honeywell\TEV_API\Tev.DAL\obj\Debug\netcoreapp3.1\Tev.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\honeywell\TEV_API\Tev.DAL\obj\Debug\netcoreapp3.1\Tev.DAL.AssemblyInfoInputs.cache
+D:\honeywell\TEV_API\Tev.DAL\obj\Debug\netcoreapp3.1\Tev.DAL.AssemblyInfo.cs
+D:\honeywell\TEV_API\Tev.DAL\obj\Debug\netcoreapp3.1\Tev.DAL.csproj.CoreCompileInputs.cache
+D:\honeywell\TEV_API\Tev.DAL\obj\Debug\netcoreapp3.1\Tev.DAL.csproj.CopyComplete
+D:\honeywell\TEV_API\Tev.DAL\obj\Debug\netcoreapp3.1\Tev.DAL.dll
+D:\honeywell\TEV_API\Tev.DAL\obj\Debug\netcoreapp3.1\Tev.DAL.pdb
+D:\honeywell\TEV_API\Tev.DAL\obj\Debug\netcoreapp3.1\Tev.DAL.genruntimeconfig.cache

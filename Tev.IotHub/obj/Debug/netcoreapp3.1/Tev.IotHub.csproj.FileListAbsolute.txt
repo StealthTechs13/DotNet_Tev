@@ -1,0 +1,13 @@
+D:\honeywell\TEV_API\Tev.IotHub\bin\Debug\netcoreapp3.1\Tev.IotHub.deps.json
+D:\honeywell\TEV_API\Tev.IotHub\bin\Debug\netcoreapp3.1\Tev.IotHub.dll
+D:\honeywell\TEV_API\Tev.IotHub\bin\Debug\netcoreapp3.1\Tev.IotHub.pdb
+D:\honeywell\TEV_API\Tev.IotHub\bin\Debug\netcoreapp3.1\MMSConstants.dll
+D:\honeywell\TEV_API\Tev.IotHub\bin\Debug\netcoreapp3.1\MMSConstants.pdb
+D:\honeywell\TEV_API\Tev.IotHub\obj\Debug\netcoreapp3.1\Tev.IotHub.csproj.AssemblyReference.cache
+D:\honeywell\TEV_API\Tev.IotHub\obj\Debug\netcoreapp3.1\Tev.IotHub.GeneratedMSBuildEditorConfig.editorconfig
+D:\honeywell\TEV_API\Tev.IotHub\obj\Debug\netcoreapp3.1\Tev.IotHub.AssemblyInfoInputs.cache
+D:\honeywell\TEV_API\Tev.IotHub\obj\Debug\netcoreapp3.1\Tev.IotHub.AssemblyInfo.cs
+D:\honeywell\TEV_API\Tev.IotHub\obj\Debug\netcoreapp3.1\Tev.IotHub.csproj.CoreCompileInputs.cache
+D:\honeywell\TEV_API\Tev.IotHub\obj\Debug\netcoreapp3.1\Tev.IotHub.csproj.CopyComplete
+D:\honeywell\TEV_API\Tev.IotHub\obj\Debug\netcoreapp3.1\Tev.IotHub.dll
+D:\honeywell\TEV_API\Tev.IotHub\obj\Debug\netcoreapp3.1\Tev.IotHub.pdb

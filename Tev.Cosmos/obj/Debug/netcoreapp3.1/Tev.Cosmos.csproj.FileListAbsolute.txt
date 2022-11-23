@@ -1,0 +1,15 @@
+D:\honeywell\TEV_API\Tev.Cosmos\bin\Debug\netcoreapp3.1\Microsoft.Azure.Cosmos.ServiceInterop.dll
+D:\honeywell\TEV_API\Tev.Cosmos\bin\Debug\netcoreapp3.1\Cosmos.CRTCompat.dll
+D:\honeywell\TEV_API\Tev.Cosmos\bin\Debug\netcoreapp3.1\Tev.Cosmos.deps.json
+D:\honeywell\TEV_API\Tev.Cosmos\bin\Debug\netcoreapp3.1\Tev.Cosmos.dll
+D:\honeywell\TEV_API\Tev.Cosmos\bin\Debug\netcoreapp3.1\Tev.Cosmos.pdb
+D:\honeywell\TEV_API\Tev.Cosmos\bin\Debug\netcoreapp3.1\MMSConstants.dll
+D:\honeywell\TEV_API\Tev.Cosmos\bin\Debug\netcoreapp3.1\MMSConstants.pdb
+D:\honeywell\TEV_API\Tev.Cosmos\obj\Debug\netcoreapp3.1\Tev.Cosmos.csproj.AssemblyReference.cache
+D:\honeywell\TEV_API\Tev.Cosmos\obj\Debug\netcoreapp3.1\Tev.Cosmos.GeneratedMSBuildEditorConfig.editorconfig
+D:\honeywell\TEV_API\Tev.Cosmos\obj\Debug\netcoreapp3.1\Tev.Cosmos.AssemblyInfoInputs.cache
+D:\honeywell\TEV_API\Tev.Cosmos\obj\Debug\netcoreapp3.1\Tev.Cosmos.AssemblyInfo.cs
+D:\honeywell\TEV_API\Tev.Cosmos\obj\Debug\netcoreapp3.1\Tev.Cosmos.csproj.CoreCompileInputs.cache
+D:\honeywell\TEV_API\Tev.Cosmos\obj\Debug\netcoreapp3.1\Tev.Cosmos.csproj.CopyComplete
+D:\honeywell\TEV_API\Tev.Cosmos\obj\Debug\netcoreapp3.1\Tev.Cosmos.dll
+D:\honeywell\TEV_API\Tev.Cosmos\obj\Debug\netcoreapp3.1\Tev.Cosmos.pdb

@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tev.API</name>
+    </assembly>
+    <members>
+        <member name="T:Tev.API.Controllers.AlertsController">
+            <summary>
+            APIs for alert management
+            </summary>
+        </member>
+        <member name="M:Tev.API.Controllers.AlertsController.Get(System.Int32,System.Int32,System.Collections.Generic.List{System.Int32},System.Nullable{System.Boolean})">
+            <summary>
+            Gets all the alerts across all location and devices and all acknowledgement status
+            </summary>
+            <param name="skip">Number of records to skip</param>
+            <param name="take">Number of records to take, recommended value is 15 for mobile clients and 20 for web clients</param>
+            <param name="alertType"></param>
+            <param name="acknowledged"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.AlertsController.GetAlertsByLocation(System.String,System.Int32,System.Int32)">
+            <summary>
+            Gets all alerts of a particular location.
+            </summary>
+            <param name="id"></param>
+            <param name="skip"></param>
+            <param name="take"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.AlertsController.GetAlertsByDevice(System.String,System.Int32,System.Int32)">
+            <summary>
+            Get all alerts of a particular device
+            </summary>
+            <param name="id"></param>
+            <param name="skip"></param>
+            <param name="take"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.AlertsController.GetAlertsByType(Tev.API.Enums.AlertType,System.Int32,System.Int32)">
+            <summary>
+            Gets alerts filtered by types
+            </summary>
+        </member>
+        <member name="M:Tev.API.Controllers.AlertsController.Acknowledge(System.String)">
+            <summary>
+            Acknowledge an alert
+            </summary>
+            <param name="alertId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.AlertsController.ReportIncorrect(Tev.API.Models.IncorrectAlertRequest)">
+            <summary>
+            Report an alert as incorrect classification
+            </summary>
+            <param name="reqBody"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.AlertsController.GetAlertDetails(System.String)">
+            <summary>
+            Gets the detailed media related to an alert
+            </summary>
+        </member>
+        <member name="M:Tev.API.Controllers.AlertsController.GetAlertTypes">
+            <summary>
+            Gets alerts types
+            </summary>
+        </member>
+        <member name="T:Tev.API.Controllers.DevicesController">
+            <summary>
+            APIs for device management
+            </summary>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.GetAllDevices">
+            <summary>
+            Gets all devices across all locations
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tev.API.Controllers.DevicesController.GetAllDevices(System.String)">
+            <summary>
+            Gets devices specific to a location
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tev.API.Controllers.LocationController">
+            <summary>
+            APIs for location management
+            </summary>
+        </member>
+        <member name="M:Tev.API.Controllers.LocationController.GetLocations">
+            <summary>
+            Get all the locations of a logged in user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Tev.API.Models.CreateSiteRequest.ParenSiteId">
+            <summary>
+            Parent site of the site being created
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.CreateSiteRequest.SiteName">
+            <summary>
+            Name of the site
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.CreateSiteRequest.OrgId">
+            <summary>
+            Id of the organization of which this site will be part of
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceResponse.Connected">
+            <summary>
+            True denotes online, false denotes offline, null denotes Indeterminate
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceResponse.LocationId">
+            <summary>
+            Location to which device is connected
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceResponse.LocationName">
+            <summary>
+            Location to which device is connected
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceResponse.MACAddress">
+            <summary>
+            Physical address of the device
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceSubscriptionResponse.LastPaidDate">
+            <summary>
+            Last payment made for this subscription in Epoch Time format
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.DeviceSubscriptionResponse.NextRenewalData">
+            <summary>
+            Next renewal date for this subscription in Epoch Time
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.LocationResponse.Id">
+            <summary>
+            The unique Id of location
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.LocationResponse.Name">
+            <summary>
+            Name of the location
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.LocationResponse.Path">
+            <summary>
+            Path of the location starting with the root
+            E.g [{Id:2,Name:"Honeywell India"},{Id:"6",Name:"Honeywell West"},{Id:"7",Name:"Honeywell Hadpasar"},{Id:"8",Name:"Honeywell Hadapsar Gate No.1"}]
+            This will be null for 'individual' users
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.PaymentHistoryResponse.PaymentDate">
+            <summary>
+            Payment Date in epoch time
+            </summary>
+        </member>
+        <member name="P:Tev.API.Models.PaymentHistoryResponse.Amount">
+            <summary>
+            Paid amount
+            </summary>
+        </member>
+    </members>
+</doc>

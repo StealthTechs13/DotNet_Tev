@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20201021125158_AddTechnicianDevicesMappingTable.cs" />
+    <Compile Remove="Migrations\20201021125158_AddTechnicianDevicesMappingTable.Designer.cs" />
+    <Compile Remove="Migrations\20201021130439_AddTechnicianDevicesMappingTable.cs" />
+    <Compile Remove="Migrations\20201021130439_AddTechnicianDevicesMappingTable.Designer.cs" />
+    <Compile Remove="Migrations\20201023093711_AddEmergencyCallHistory.cs" />
+    <Compile Remove="Migrations\20201023093711_AddEmergencyCallHistory.Designer.cs" />
+    <Compile Remove="Migrations\20201023113724_AddDeviceReplacement.cs" />
+    <Compile Remove="Migrations\20201023113724_AddDeviceReplacement.Designer.cs" />
+    <Compile Remove="Migrations\20201024091509_addDeviceInEmergencyCallHistory.cs" />
+    <Compile Remove="Migrations\20201024091509_addDeviceInEmergencyCallHistory.Designer.cs" />
+    <Compile Remove="Migrations\20201029103154_RemoveDeviceTable.cs" />
+    <Compile Remove="Migrations\20201029103154_RemoveDeviceTable.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.7" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\mms_common\MMSConstants\MMSConstants.csproj" />
+  </ItemGroup>
+
+</Project>
